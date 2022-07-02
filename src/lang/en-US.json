@@ -1,0 +1,22 @@
+{
+  "home.nav.home": "Home",
+  "home.nav.about": "About",
+  "home.nav.projects": "Projects",
+  "home.nav.news": "News",
+  "home.nav.contact": "Contact",
+  "home.presentation.title": "Who is Vitoria Cavassin?",
+  "home.presentation.description": "The best architect in the world.",
+  "home.presentation.button": "Get in Touch",
+  "home.projects.title": "Featured Projects",
+  "home.projects.description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys tandard dummy text ever since the 1500s",
+  "home.projects.see_more": "See more",
+  "home.footer.email": "vitoria@vitoriacavassin.com",
+  "home.footer.featuredPhrase": "Let tell us know your dream and we will help you make it become reality",
+  "home.footer.address.title": "Office",
+  "home.footer.links.title": "Links",
+  "home.footer.links.home": "Home",
+  "home.footer.links.about": "About",
+  "home.footer.links.projects": "Projects",
+  "home.footer.links.news": "News",
+  "home.footer.links.contact": "Contact"
+}

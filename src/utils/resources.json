@@ -1,0 +1,186 @@
+{
+  "featuredImages": [
+    {
+      "id": 1,
+      "uri": "/assets/images/yoga.png",
+      "description": "yoga",
+      "location": "Curitiba - PR",
+      "dictionary": {
+        "en-US": {
+          "description": "yoga"
+        },
+        "pt-BR": {
+          "description": "yoga"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "uri": "/assets/images/porch.png",
+      "description": "porch",
+      "location": "Curitiba - PR",
+      "dictionary": {
+        "en-US": {
+          "description": "porch"
+        },
+        "pt-BR": {
+          "description": "varanda"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "uri": "/assets/images/playground.png",
+      "description": "playground",
+      "location": "Curitiba - PR",
+      "dictionary": {
+        "en-US": {
+          "description": "playground"
+        },
+        "pt-BR": {
+          "description": "brinquedoteca"
+        }
+      }
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Yoga Spa",
+      "shortDescription": "Yoga spa desenvovido com amor e carinho.",
+      "description": "Yoga spa desenvovido com amor e carinho pela arquiteta mais renomada de Curitiba.",
+      "location": "Curitiba - PR",
+      "pictures": [
+        "/assets/images/yoga.png"
+      ],
+      "type": "COMMERCIAL",
+      "dictionary": {
+        "en-US": {
+          "name": "Yoga Spa",
+          "description": "Yoga spa developed with love for the most brilliant architect of Curitiba.",
+          "shortDescription": "Yoga spa developed with love."
+        },
+        "pt-BR": {
+          "name": "Yoga Spa",
+          "description": "Yoga spa desenvovido com amor e carinho pela arquiteta mais renomada de Curitiba.",
+          "shortDescription": "Yoga spa desenvovido com amor e carinho."
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": "Porch Cabin",
+      "location": "Curitiba - PR",
+      "shortDescription": "Porch Cabin desenvovido com amor e carinho.",
+      "description": "Porch Cabin desenvovido com amor e carinho pela arquiteta mais renomada de Curitiba.",
+      "pictures": [
+        "/assets/images/porch.png"
+      ],
+      "type": "COMMERCIAL",
+      "dictionary": {
+        "en-US": {
+          "name": "Porch Cabin",
+          "description": "Porch Cabin developed with love for the most brilliant architect of Curitiba.",
+          "shortDescription": "Porch Cabin developed with love."
+        },
+        "pt-BR": {
+          "name": "Varanda",
+          "description": "Varanda desenvovida com amor e carinho pela arquiteta mais renomada de Curitiba.",
+          "shortDescription": "Varanda desenvovido com amor e carinho."
+        }
+      }
+    },
+    {
+      "id": 3,
+      "name": "Playground",
+      "location": "Curitiba - PR",
+      "shortDescription": "Playground desenvovido com amor e carinho",
+      "description": "Playground desenvovido com amor e carinho pela arquiteta mais renomada de Curitiba.",
+      "pictures": [
+        "/assets/images/playground.png"
+      ],
+      "type": "COMMERCIAL",
+      "dictionary": {
+        "en-US": {
+          "name": "Playground",
+          "description": "Playground developed with love for the most brilliant architect of Curitiba.",
+          "shortDescription": "Playground developed with love."
+        },
+        "pt-BR": {
+          "name": "Brinquedoteca",
+          "description": "Brinquedoteca com amor e carinho pela arquiteta mais renomada de Curitiba.",
+          "shortDescription": "Brinquedoteca com amor e carinho."
+        }
+      }
+    },
+    {
+      "id": 4,
+      "name": "Yoga Spa",
+      "location": "Curitiba - PR",
+      "shortDescription": "Yoga spa desenvovido com amor e carinho.",
+      "description": "Yoga spa desenvovido com amor e carinho pela arquiteta mais renomada de Curitiba.",
+      "pictures": [
+        "/assets/images/yoga.png"
+      ],
+      "type": "COMMERCIAL",
+      "dictionary": {
+        "en-US": {
+          "name": "Yoga Spa",
+          "description": "Yoga spa developed with love for the most brilliant architect of Curitiba.",
+          "shortDescription": "Yoga spa developed with love."
+        },
+        "pt-BR": {
+          "name": "Yoga Spa",
+          "description": "Yoga spa desenvovido com amor e carinho pela arquiteta mais renomada de Curitiba.",
+          "shortDescription": "Yoga spa desenvovido com amor e carinho."
+        }
+      }
+    },
+    {
+      "id": 5,
+      "name": "Porch Cabin",
+      "location": "Curitiba - PR",
+      "shortDescription": "Porch Cabin desenvovido com amor e carinho.",
+      "description": "Porch Cabin desenvovido com amor e carinho pela arquiteta mais renomada de Curitiba.",
+      "pictures": [
+        "/assets/images/porch.png"
+      ],
+      "type": "COMMERCIAL",
+      "dictionary": {
+        "en-US": {
+          "name": "Porch Cabin",
+          "description": "Porch Cabin developed with love for the most brilliant architect of Curitiba.",
+          "shortDescription": "Porch Cabin developed with love."
+        },
+        "pt-BR": {
+          "name": "Varanda",
+          "description": "Varanda desenvovida com amor e carinho pela arquiteta mais renomada de Curitiba.",
+          "shortDescription": "Varanda desenvovido com amor e carinho."
+        }
+      }
+    },
+    {
+      "id": 6,
+      "name": "Playground",
+      "location": "Curitiba - PR",
+      "shortDescription": "Playground desenvovido com amor e carinho",
+      "description": "Playground desenvovido com amor e carinho pela arquiteta mais renomada de Curitiba.",
+      "pictures": [
+        "/assets/images/playground.png"
+      ],
+      "type": "COMMERCIAL",
+      "dictionary": {
+        "en-US": {
+          "name": "Playground",
+          "description": "Playground developed with love for the most brilliant architect of Curitiba.",
+          "shortDescription": "Playground developed with love."
+        },
+        "pt-BR": {
+          "name": "Brinquedoteca",
+          "description": "Brinquedoteca com amor e carinho pela arquiteta mais renomada de Curitiba.",
+          "shortDescription": "Brinquedoteca com amor e carinho."
+        }
+      }
+    }
+  ]
+}
