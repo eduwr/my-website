@@ -14,8 +14,8 @@ export type NavigatePage = {
 };
 
 const pages: NavigatePage[] = [
-  { key: "home.nav.home", to: "/" },
   { key: "home.nav.blog", to: "/blog" },
+  { key: "home.nav.home", to: "/" },
 ];
 
 export const Layout = ({ children }: Props) =>

@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* - - BREAKPOINTS - - */
+/*SMALL = 640,*/
+/*MEDIUM = 768,*/
+/*LARGE = 1024,*/
+/*EXTRA_LARGE = 1280,*/
+/*EXTRA_LARGE_X2 = 1536,*/
+
+
 @layer utilities {
   .text-shadow {
     text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
@@ -15,6 +23,70 @@
   .transition-fast {
     @apply transition-all;
     @apply duration-300;
+  }
+
+  .nav-decoration-x {
+    @apply relative;
+  }
+
+  .nav-decoration-y {
+    @apply relative;
+  }
+
+  .nav-decoration-y::after {
+    @apply content-[""];
+    @apply absolute;
+    @apply bg-secondary;
+    top: 2rem;
+    right: -2.25rem;
+    width: 5px;
+    height: 100vh;
+  }
+
+  .nav-decoration-y::before {
+    @apply content-[""];
+    @apply absolute;
+    @apply bg-secondary;
+    right: -3.25rem;
+    top: 4rem;
+    width: 5px;
+    height: 100vh;
+  }
+
+  .nav-decoration-x::after {
+    @apply absolute;
+    @apply content-[""];
+    @apply bg-secondary;
+    width: 75vw;
+    height: 5px;
+    bottom: 0.75rem;
+    right: 2.5rem;
+  }
+  
+  @media screen and (max-width: 1536px) {
+    .nav-decoration-x::after {
+      width: 60vw;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .nav-decoration-x::after {
+      width: 45vw;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .nav-decoration-x::after {
+      @apply hidden;
+    }
+
+    .nav-decoration-y::before {
+      @apply hidden;
+    }
+
+    .nav-decoration-y::after {
+      @apply hidden;
+    }
   }
 }
 

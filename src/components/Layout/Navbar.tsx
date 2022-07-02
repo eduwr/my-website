@@ -12,17 +12,21 @@ export const Navbar = ({ pages }: Props) => {
   return (
     <nav className={navClass}>
       <ul className={listClass}>
-        {pages.map(({ key, to }) => (
-          <li key={key}>
-            <Link href={to}>
-              <a
-                className="text-6xl text-tertiary lowercase m-7 hover:text-secondary text-shadow transition-fast"
-              >
-                <Translated textKey={key} />
-              </a>
-            </Link>
-          </li>
-        ))}
+        {pages.map(({ key, to }, idx) => {
+          const addStyle = (!idx && " nav-decoration-x") || (idx === pages.length -1 && " nav-decoration-y")
+
+          return (
+            <li key={key}>
+              <Link href={to}>
+                <a
+                  className={"text-6xl text-tertiary lowercase m-7 hover:text-secondary text-shadow transition-fast" + addStyle}
+                >
+                  <Translated textKey={key}/>
+                </a>
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
