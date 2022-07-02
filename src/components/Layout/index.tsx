@@ -1,4 +1,3 @@
-import { Carousel } from "../Carousel";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import type { Dictionary } from "../../contexts/TranslateContext";
@@ -22,23 +21,17 @@ const pages: NavigatePage[] = [
   { key: "home.nav.contact", to: "/contact" },
 ];
 
-export const Layout = ({ children, showCarousel }: Props) => (
-  <>
-    <div
-      className={
-        showCarousel ? " flex flex-col relative h-screen justify-between" : ""
-      }
-    >
+export const Layout = ({ children }: Props) =>
+  (
+    <>
       <Header pages={pages}/>
-      {showCarousel && <Carousel/>}
-    </div>
-    <main>{children}</main>
-    <Footer
-      addressLines={[
-        "Rua Marechal Floriano Peixoto, 196 Curitiba - PR",
-        "CEP 88140-000",
-      ]}
-      pages={pages}
-    />
-  </>
-);
+      <main>{children}</main>
+      <Footer
+        addressLines={[
+          "Rua Marechal Floriano Peixoto, 196 Curitiba - PR",
+          "CEP 88140-000",
+        ]}
+        pages={pages}
+      />
+    </>
+  );

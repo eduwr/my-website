@@ -1,19 +1,17 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { Presentation } from "../components/Presentation";
-import { ProjectSection } from "../components/ProjectSection";
 
 const Home: NextPage = (props) => {
   return (
     <div>
       <Head>
-        <title>Vitória Cavassin | Home</title>
-        <meta name="description" content="Vitória Cavassin Arquiteta" />
+        <title>Eduardo Wronscki | Home</title>
+        <meta name="description" content="Eduardo Wronscki - Full-Stack Developer" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Presentation />
-      <ProjectSection />
     </div>
   );
 };
