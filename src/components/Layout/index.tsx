@@ -5,7 +5,6 @@ import type { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
-  showCarousel: boolean;
 }
 
 export type NavigatePage = {

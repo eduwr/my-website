@@ -1,0 +1,15 @@
+{
+    "schemaPath": "schema.graphql",
+    "extensions": {
+        "endpoints": {
+            "dev": {
+                "url": "https://api.hashnode.com/",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer 1622038b-6ded-4f11-a547-3dcb6d339388"
+                },
+                "introspect": true
+            }
+        }
+    }
+}
