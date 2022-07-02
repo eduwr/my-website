@@ -11,6 +11,11 @@
 
 
 @layer utilities {
+  .debug {
+    @apply border-2;
+    @apply border-white;
+  }
+
   .text-shadow {
     text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
   }
