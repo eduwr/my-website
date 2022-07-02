@@ -13,7 +13,7 @@
 @layer utilities {
   .debug {
     @apply border-2;
-    @apply border-white;
+    @apply border-error;
   }
 
   .text-shadow {
