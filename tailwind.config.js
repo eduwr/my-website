@@ -5,12 +5,19 @@ module.exports = {
   ],
   theme: {
     colors: {
-      yellow: "#5D5FEF",
-      grey: "#676767",
       black: "#000000",
-      light: "#f8f9fa",
       white: "#ffffff",
-      iris: "#5D5FEF"
+      primary: "#5D5FEF",
+      "primary-focus": "#5D5FEF",
+      "primary-content": "#2B2B2B",
+      secondary: "#F8F9FA",
+      "secondary-focus": "#F8F9FA",
+      "secondary-content": "#676767",
+      tertiary: "#d9d9d9",
+      "tertiary-focus": "#d9d9d9",
+      "tertiary-content": "#4F4F4F",
+      "success": "#5AD78C",
+      "error": "#C75151"
     },
     extend: {
       height: {

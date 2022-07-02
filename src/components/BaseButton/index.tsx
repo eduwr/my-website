@@ -11,8 +11,8 @@ interface ButtonProps {
 }
 
 
-const outlineStyle = "flex whitespace-nowrap py-4 px-8 text-lg md:text-xl text-yellow uppercase border-2 border-yellow rounded-lg hover:text-white hover:bg-yellow transition-all duration-300"
-const buttonStyle = "flex whitespace-nowrap py-4 px-8 text-lg md:text-xl text-white uppercase rounded-lg bg-yellow transition-all duration-300 opacity-80 hover:opacity-100"
+const outlineStyle = "flex whitespace-nowrap py-4 px-8 text-lg md:text-xl text-primary uppercase border-2 border-primary rounded-lg hover:text-white hover:bg-primary transition-all duration-300"
+const buttonStyle = "flex whitespace-nowrap py-4 px-8 text-lg md:text-xl text-white uppercase rounded-lg bg-primary transition-all duration-300 opacity-80 hover:opacity-100"
 
 export const BaseButton = ({ children, outline, style, onClick, to }: ButtonProps) => {
   return (
