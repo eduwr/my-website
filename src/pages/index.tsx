@@ -1,18 +1,38 @@
-import type { NextPage } from "next";
+import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import { Presentation } from "../components/Presentation";
 import { BlogSection } from "../components/BlogSection";
-import { useQuery, gql } from '@apollo/client';
+import { gql } from '@apollo/client';
+import { apolloClient } from "../lib/ApolloClient";
 
-const GET_ARTICLES = gql`
-  query {
-    user(username:"eduwr") {
-      name
-      numFollowing
-      numFollowers
+export interface Post {
+  _id: string;
+  title: string;
+  coverImage: string;
+  totalReactions: number;
+  popularity: number
+  brief: string;
+}
+
+interface GetPostsByUserResponse {
+  user: {
+    publication: {
+      posts: Post[]
+    }
+  }
+}
+
+interface Props {
+  posts: Post[]
+}
+
+
+const GET_POSTS_BY_USER = gql`
+  query GetPostsByUser($user: String!) {
+    user(username:$user) {
       publication {
-        title
         posts {
+          _id
           title
           coverImage
           totalReactions
@@ -24,10 +44,7 @@ const GET_ARTICLES = gql`
   }
 `;
 
-const Home: NextPage = (props) => {
-  const { data, error, loading } = useQuery(GET_ARTICLES)
-
-  console.log({data, error, loading})
+const Home: NextPage<Props> = (props) => {
 
   return (
     <div>
@@ -38,9 +55,28 @@ const Home: NextPage = (props) => {
       </Head>
 
       <Presentation/>
-      <BlogSection/>
+      <BlogSection posts={props.posts}/>
     </div>
   );
 };
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const {data} = await apolloClient.query<GetPostsByUserResponse>({
+    query: GET_POSTS_BY_USER,
+    variables: {
+      user: "eduwr"
+    }
+  });
+
+  const props = {} as Props
+
+  if(data) {
+    props.posts = data.user.publication.posts
+  }
+
+  return {
+    props
+  }
+}
 
 export default Home;

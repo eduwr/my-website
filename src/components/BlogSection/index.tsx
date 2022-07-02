@@ -1,6 +1,11 @@
 import { Translated } from "../Translated";
+import { Post } from "../../pages";
 
-export const BlogSection = () => {
+interface Props {
+  posts: Post[]
+}
+
+export const BlogSection = ({posts}: Props) => {
 
   return (
     <section
@@ -11,6 +16,9 @@ export const BlogSection = () => {
       >
         <Translated textKey={"home.nav.blog"} />
       </h2>
+      {posts.map(post => {
+        return <div key={post._id}>{post.title}</div>
+      })}
     </section>
   )
 }
