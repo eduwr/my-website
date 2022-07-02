@@ -64,7 +64,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const {data} = await apolloClient.query<GetPostsByUserResponse>({
     query: GET_POSTS_BY_USER,
     variables: {
-      user: "eduwr"
+      user: process.env.NEXT_PUBLIC_HASHNODE_USER
     }
   });
 
