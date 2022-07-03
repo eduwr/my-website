@@ -19,8 +19,9 @@ export const BlogSection = ({posts}: Props) => {
         <Translated textKey={"home.nav.blog"} />
       </h2>
       <ul className="flex justify-center gap-5">
-        {posts.map(post => {
-          return <PostCard key={post._id} post={post}/>
+        {posts.map((post, index) => {
+          const inverted = index % 2 !== 0
+          return <PostCard key={post._id} post={post} inverted={inverted}/>
         })}
       </ul>
     </section>

@@ -12,6 +12,8 @@ export interface Post {
   totalReactions: number;
   popularity: number
   brief: string;
+  dateAdded: Date;
+  dateFeatured: Date;
 }
 
 interface GetPostsByUserResponse {
@@ -38,6 +40,8 @@ const GET_POSTS_BY_USER = gql`
           totalReactions
           popularity
           brief
+          dateAdded
+          dateFeatured
         }
       }
     }
@@ -68,11 +72,15 @@ export const getServerSideProps: GetServerSideProps = async () => {
     }
   });
 
+
+
   const props = {} as Props
 
   if(data) {
     props.posts = data.user.publication.posts
   }
+
+  console.log({props})
 
   return {
     props
