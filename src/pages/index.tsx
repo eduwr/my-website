@@ -13,7 +13,8 @@ export interface Post {
   popularity: number
   brief: string;
   dateAdded: Date;
-  dateFeatured: Date;
+  slug: string;
+
 }
 
 interface GetPostsByUserResponse {
@@ -41,7 +42,7 @@ const GET_POSTS_BY_USER = gql`
           popularity
           brief
           dateAdded
-          dateFeatured
+          slug
         }
       }
     }
