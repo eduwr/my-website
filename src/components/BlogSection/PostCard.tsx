@@ -14,7 +14,7 @@ dayjs.extend(advancedFormat);
 const MAX_ROTATION = 25;
 
 export const PostCard = ({ post }: Props) => {
-  const {cleanup, ref, rotationCoordinates, handleMouseMove, transition} = use3DTransform(MAX_ROTATION)
+  const { cleanup, ref, rotationCoordinates, handleMouseMove, } = use3DTransform(MAX_ROTATION)
 
   const added = dayjs(post.dateAdded);
 
@@ -27,10 +27,9 @@ export const PostCard = ({ post }: Props) => {
         target="_blank"
         style={{
           transform: `perspective(900px) rotateY(${-rotationCoordinates[0]}deg) rotateX(${rotationCoordinates[1]}deg)`,
-          transition,
           filter: `drop-shadow(${rotationCoordinates[0]}px ${rotationCoordinates[1]}px 20px rgb(0 0 0 / 0.5))`
         }}
-        >
+      >
         <li
           className={`flex flex-col justify-end w-80 h-80 xl:w-96 xl:h-96 rounded-2xl relative overflow-hidden`}>
           <div
