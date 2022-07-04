@@ -9,6 +9,11 @@
 /*EXTRA_LARGE = 1280,*/
 /*EXTRA_LARGE_X2 = 1536,*/
 
+:root {
+  --line-width: 3px;
+  --blur: 10px;
+}
+
 
 @layer utilities {
   .debug {
@@ -41,29 +46,29 @@
   .nav-decoration-y::after {
     @apply content-[""];
     @apply absolute;
-    @apply bg-secondary;
+    @apply bg-tertiary;
     top: 2rem;
     right: -2.25rem;
-    width: 5px;
+    width: var(--line-width);
     height: 150vh;
   }
 
   .nav-decoration-y::before {
     @apply content-[""];
     @apply absolute;
-    @apply bg-secondary;
+    @apply bg-tertiary;
     right: -3.25rem;
     top: 4rem;
-    width: 5px;
+    width: var(--line-width);
     height: 150vh;
   }
 
   .nav-decoration-x::after {
     @apply absolute;
     @apply content-[""];
-    @apply bg-secondary;
+    @apply bg-tertiary;
     width: 75vw;
-    height: 5px;
+    height: var(--line-width);
     bottom: 0.75rem;
     right: 2.5rem;
   }
