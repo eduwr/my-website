@@ -1,8 +1,8 @@
 {
   "home.nav.home": "Início",
   "home.nav.blog": "Blog",
-  "home.presentation.title": "The best choice for your software",
-  "home.presentation.description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.",
+  "home.presentation.title": "Let's build something great",
+  "home.presentation.description": "Hi. My name is Eduardo. I'm a Full-Stack Developer passionate for creating beautiful and meaningful systems with cool techs like Node.js, React and React Native.",
   "home.presentation.button": "Get in touch",
   "home.footer.email": "eduwric@gmail.com",
   "home.footer.featuredPhrase": "Here your dreams become reality",

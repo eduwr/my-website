@@ -22,17 +22,17 @@ export interface TranslateContextValues {
 export const TranslateContext = createContext<TranslateContextValues>({} as TranslateContextValues)
 
 const langMapping: Record<LANGUAGES, Dictionary> = {
+  [LANGUAGES.EN_US]: enUS,
   [LANGUAGES.PT_BR]: ptBR,
-  [LANGUAGES.EN_US]: enUS
 }
 
 export const TranslateProvider = ({ children }: Props) => {
   const { locale } = useRouter()
 
-  const [ dictionary, setDictionary ] = useState<Dictionary>(langMapping[LANGUAGES.PT_BR])
+  const [ dictionary, setDictionary ] = useState<Dictionary>(langMapping[LANGUAGES.EN_US])
 
   useEffect(() => {
-    setDictionary(langMapping[locale as LANGUAGES] || langMapping[LANGUAGES.PT_BR])
+    setDictionary(langMapping[locale as LANGUAGES] || langMapping[LANGUAGES.EN_US])
   }, [ locale ])
 
   const translate = (key: keyof Dictionary, def?: string) => {
