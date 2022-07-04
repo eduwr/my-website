@@ -1,14 +1,41 @@
-import Image from "next/image";
 import Link from "next/link";
 import { NavigatePage } from "."; 
 import { Translated } from "../Translated";
+import { InstagramIcon } from "../Icons/InstagramIcon";
+import { GithubIcon } from "../Icons/GithubIcon";
+import { LinkedinIcon } from "../Icons/LinkedinIcon";
+import { TwitterIcon } from "../Icons/TwitterIcon";
 
 interface Props {
   addressLines: string[];
   pages: NavigatePage[];
 }
 
+const socialMediaList = [
+  {
+    key: "github",
+    url: "www.github.com/eduwr",
+    Icon: GithubIcon
+  },
+  {
+    key: "linkedin",
+    url: "www.github.com/eduwr",
+    Icon: LinkedinIcon
+  },
+  {
+    key: "github",
+    url: "www.github.com/eduwr",
+    Icon: TwitterIcon
+  },
+  {
+    key: "instagram",
+    url: "www.github.com/eduwr",
+    Icon: InstagramIcon
+  }
+]
+
 export const Footer = ({ addressLines, pages }: Props) => {
+
   return (
     <footer className="flex flex-col px-2 md:px-20">
       {/* Featured Email */}
@@ -53,20 +80,15 @@ export const Footer = ({ addressLines, pages }: Props) => {
         </div>
         {/* Social Media */}
         <div className="flex absolute right-0 top-5 items-end justify-between ">
-          {[1,2,3].map(item => (
+          {socialMediaList.map(({ key, Icon }) => (
             <a
-              key={item}
-              className="flex justify-center items-center w-10 h-10 rounded-full ml-3 border-black border-2 transition-all duration-300 hover:bg-primary"
+              key={key}
+              className="flex justify-center items-center w-12 h-12 ml-3 border-2 border-tertiary rounded-full overflow-hidden transition-all duration-300 hover:bg-primary"
               target="_blank"
               href="https://www.instagram.com/eduwric"
               rel="noreferrer"
             >
-              <Image
-                alt="Instagram"
-                src="/icons/instagram.png"
-                width={24}
-                height={24}
-              />
+              <Icon />
             </a>
           ))}
         </div>
