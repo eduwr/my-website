@@ -81,8 +81,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
     props.posts = data.user.publication.posts
   }
 
-  console.log({props})
-
   return {
     props
   }
