@@ -1,5 +1,5 @@
 {
-  "name": "vitoria-cavassin",
+  "name": "eduardo-wronscki",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "author": "eduwr",
   "dependencies": {
     "@apollo/client": "^3.6.9",
     "dayjs": "^1.11.3",
