@@ -6,8 +6,8 @@ interface Props {
   pages: NavigatePage[];
 }
 
-const navClass = "h-full pt-20 pr-16"
-const listClass = "flex flex-row justify-end divide-x-4 divide-tertiary"
+const navClass = "h-full flex items-center justify-center md:block md:pt-20 md:pr-16"
+const listClass = "flex flex-row justify-center md:justify-end divide-x-4 divide-tertiary"
 
 export const Navbar = ({ pages }: Props) => {
   return (
@@ -20,7 +20,7 @@ export const Navbar = ({ pages }: Props) => {
             <li key={key}>
               <Link href={to}>
                 <a
-                  className={"text-6xl text-tertiary lowercase m-7 hover:text-secondary text-shadow transition-fast" + addStyle}
+                  className={"text-5xl md:text-6xl text-tertiary lowercase m-7 hover:text-secondary text-shadow transition-fast" + addStyle}
                   target={target}
                 >
                   <Translated textKey={key}/>
