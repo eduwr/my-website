@@ -12,7 +12,18 @@ export const Presentation = () => (
       <p className="text-xl xl:text-2xl text-tertiary mt-3 mb-8">
         <Translated textKey="home.presentation.description" />
       </p>
-      <BaseButton outline>
+      <BaseButton
+        outline
+        onClick={() => {
+          if( window ) {
+            console.log(window.screenY)
+            window.scrollTo({
+              behavior: "smooth",
+              top: 5000
+            })
+          }
+        }}
+      >
         <Translated textKey={"home.presentation.button"} />
       </BaseButton>
     </div>

@@ -45,7 +45,7 @@
     top: 2rem;
     right: -2.25rem;
     width: 5px;
-    height: 100vh;
+    height: 150vh;
   }
 
   .nav-decoration-y::before {
@@ -55,7 +55,7 @@
     right: -3.25rem;
     top: 4rem;
     width: 5px;
-    height: 100vh;
+    height: 150vh;
   }
 
   .nav-decoration-x::after {
@@ -77,6 +77,14 @@
   @media screen and (max-width: 1024px) {
     .nav-decoration-x::after {
       width: 45vw;
+    }
+
+    .nav-decoration-y::before {
+      height: 190vh;
+    }
+
+    .nav-decoration-y::after {
+      height: 190vh;
     }
   }
 
