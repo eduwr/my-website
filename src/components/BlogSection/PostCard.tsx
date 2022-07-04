@@ -28,6 +28,11 @@ type GetRelativeCoordinatesParams = {
   maxCoordinates: Coordinates
 }
 
+enum TransitionStyles {
+  FAST_LINEAR = "transform 100ms linear",
+  SLOW_EASE = "transform 800ms ease"
+}
+
 const MAX_ROTATION = 25;
 const getMiddlePoint = (P0: number, P1: number) => (P0 + P1) / 2
 const getCenterCoordinates = ({ left, right, top, bottom }: Omit<Position, "centerCoordinates">): [ number, number ] =>
@@ -54,11 +59,11 @@ export const PostCard = ({ post }: Props) => {
   const ref = useRef<HTMLAnchorElement>(null)
   const added = dayjs(post.dateAdded);
   const [ rotationCoordinates, setRotationCoordinates ] = useState<Coordinates<string>>(["0", "0"])
-
+  const [transition, setTransition] = useState<TransitionStyles>(TransitionStyles.SLOW_EASE)
 
   const handleMouseMove: MouseEventHandler<HTMLAnchorElement> = ({ clientX, clientY }) => {
     if (!ref.current) return;
-
+    setTransition(TransitionStyles.FAST_LINEAR);
     const { left, top, right, bottom } = ref.current.getBoundingClientRect();
     const centerCoordinates = getCenterCoordinates({ left, right, top, bottom })
 
@@ -68,15 +73,20 @@ export const PostCard = ({ post }: Props) => {
     }
   }
 
+  const cleanup = () => {
+    setRotationCoordinates(["0", "0"])
+    setTransition(TransitionStyles.SLOW_EASE);
+  }
 
   return (
     <Link passHref href={`https://eduardowronscki.hashnode.dev/${post.slug}`}>
       <a
         ref={ref}
         onMouseMove={handleMouseMove}
-        onMouseLeave={() => {}}
+        onMouseLeave={cleanup}
         style={{
           transform: `perspective(1000px) rotateY(${rotationCoordinates[0]}) rotateX(${rotationCoordinates[1]})`,
+          transition
         }}
         target="_blank">
         <li
