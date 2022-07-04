@@ -1,7 +1,7 @@
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import type { Dictionary } from "../../contexts/TranslateContext";
-import type { ReactNode } from "react";
+import type { HTMLAttributeAnchorTarget, ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
@@ -10,10 +10,11 @@ interface Props {
 export type NavigatePage = {
   key: keyof Dictionary;
   to: string;
+  target?: HTMLAttributeAnchorTarget
 };
 
 const pages: NavigatePage[] = [
-  { key: "home.nav.blog", to: "/blog" },
+  { key: "home.nav.blog", to: "https://eduardowronscki.hashnode.dev", target: "_blank" },
   { key: "home.nav.home", to: "/" },
 ];
 
