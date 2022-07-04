@@ -1,16 +1,11 @@
 {
   "home.nav.home": "Início",
   "home.nav.blog": "Blog",
-  "home.presentation.title": "Who is Eduardo Wronscki?",
-  "home.presentation.description": "Mamãe do Tigue, diva, iluminada, esotérica, aquariana nata e arquiteta renomada.",
-  "home.presentation.button": "Entre em contato",
+  "home.presentation.title": "The best choice for your software",
+  "home.presentation.description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.",
+  "home.presentation.button": "Get in touch",
   "home.footer.email": "eduwric@gmail.com",
-  "home.footer.featuredPhrase": "Tornando seus sonhos em realidade",
-  "home.footer.address.title": "Escritório",
-  "home.footer.links.title": "Links",
-  "home.footer.links.home": "Início",
-  "home.footer.links.about": "Sobre",
-  "home.footer.links.projects": "Projetos",
-  "home.footer.links.news": "Novidades",
-  "home.footer.links.contact": "Contato"
+  "home.footer.featuredPhrase": "Here your dreams become reality",
+  "home.footer.address.title": "Office",
+  "home.footer.links.title": "Links"
 }
