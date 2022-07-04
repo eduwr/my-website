@@ -5,6 +5,7 @@ import { InstagramIcon } from "../Icons/InstagramIcon";
 import { GithubIcon } from "../Icons/GithubIcon";
 import { LinkedinIcon } from "../Icons/LinkedinIcon";
 import { TwitterIcon } from "../Icons/TwitterIcon";
+import { VisuallyHidden } from "../VisuallyHidden/VisuallyHidden";
 
 interface Props {
   addressLines: string[];
@@ -15,21 +16,21 @@ const socialMediaList = [
   {
     key: "github",
     url: "www.github.com/eduwr",
-    Icon: GithubIcon
+    Icon: GithubIcon,
   },
   {
     key: "linkedin",
-    url: "www.github.com/eduwr",
+    url: "https://www.linkedin.com/in/eduardo-wronscki-ricardo-0633421b/",
     Icon: LinkedinIcon
   },
   {
-    key: "github",
-    url: "www.github.com/eduwr",
+    key: "twitter",
+    url: "https://twitter.com/eduwric",
     Icon: TwitterIcon
   },
   {
     key: "instagram",
-    url: "www.github.com/eduwr",
+    url: "https://www.instagram.com/eduwric/",
     Icon: InstagramIcon
   }
 ]
@@ -89,6 +90,7 @@ export const Footer = ({ addressLines, pages }: Props) => {
               rel="noreferrer"
             >
               <Icon />
+              <VisuallyHidden>{key}</VisuallyHidden>
             </a>
           ))}
         </div>
