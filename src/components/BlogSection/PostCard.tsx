@@ -30,7 +30,7 @@ type GetRelativeCoordinatesParams = {
 
 enum TransitionStyles {
   FAST_LINEAR = "transform 100ms linear",
-  SLOW_EASE = "transform 800ms ease"
+  SLOW_EASE = "transform filter 800ms ease"
 }
 
 const MAX_ROTATION = 25;
@@ -53,12 +53,12 @@ const getRelativeCoordinates = (args: GetRelativeCoordinatesParams) => {
 }
 
 const getRotationCoordinates = (relativeCoordinates: Coordinates) =>
-  relativeCoordinates.map(coordinate => `${coordinate * MAX_ROTATION}deg`) as Coordinates<string>
+  relativeCoordinates.map(coordinate => coordinate * MAX_ROTATION) as Coordinates
 
 export const PostCard = ({ post }: Props) => {
   const ref = useRef<HTMLAnchorElement>(null)
   const added = dayjs(post.dateAdded);
-  const [ rotationCoordinates, setRotationCoordinates ] = useState<Coordinates<string>>(["0", "0"])
+  const [ rotationCoordinates, setRotationCoordinates ] = useState<Coordinates>([0, 0])
   const [transition, setTransition] = useState<TransitionStyles>(TransitionStyles.SLOW_EASE)
 
   const handleMouseMove: MouseEventHandler<HTMLAnchorElement> = ({ clientX, clientY }) => {
@@ -74,7 +74,7 @@ export const PostCard = ({ post }: Props) => {
   }
 
   const cleanup = () => {
-    setRotationCoordinates(["0", "0"])
+    setRotationCoordinates([0, 0])
     setTransition(TransitionStyles.SLOW_EASE);
   }
 
@@ -84,19 +84,21 @@ export const PostCard = ({ post }: Props) => {
         ref={ref}
         onMouseMove={handleMouseMove}
         onMouseLeave={cleanup}
+        target="_blank"
         style={{
-          transform: `perspective(1000px) rotateY(${rotationCoordinates[0]}) rotateX(${rotationCoordinates[1]})`,
-          transition
+          transform: `perspective(900px) rotateY(${-rotationCoordinates[0]}deg) rotateX(${rotationCoordinates[1]}deg)`,
+          transition,
+          filter: `drop-shadow(${rotationCoordinates[0]}px ${rotationCoordinates[1]}px 20px rgb(0 0 0 / 0.5))`
         }}
-        target="_blank">
+        >
         <li
           className={`flex flex-col justify-end w-80 h-80 xl:w-96 xl:h-96 rounded-2xl bg-primary-focus relative overflow-hidden`}>
           <div
-            className="absolute flex flex-col justify-end p-3 top-0 left-0 right-0 bottom-0 z-50"
+            className="absolute flex flex-col justify-end p-3 top-0 left-0 right-0 bottom-0 z-30"
           >
             <span className="text-secondary font-thin text-sm">{added.format("Do MMMM YYYY")}</span>
 
-            <h1 className="text-secondary font-bold text-xl">{post.title}</h1>
+            <h1 className="z-50 text-secondary font-bold text-xl">{post.title}</h1>
             <p className="text-xs text-tertiary mt-3">{post.brief.split(".")[0]}.</p>
           </div>
 
