@@ -14,11 +14,11 @@ export const BlogSection = ({posts}: Props) => {
       className="bg-secondary-content px-8 pb-10 pt-5 md:py-10"
     >
       <h2
-      className=" text-primary-content text-5xl font-bold uppercase leading-normal"
+      className="text-primary-content text-5xl font-bold uppercase leading-normal"
       >
         <Translated textKey={"home.nav.blog"} />
       </h2>
-      <ul className="flex justify-center gap-5">
+      <ul className="flex flex-wrap justify-center gap-5">
         {posts.map((post, index) => {
           const inverted = index % 2 !== 0
           return <PostCard key={post._id} post={post} inverted={inverted}/>
