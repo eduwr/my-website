@@ -15,7 +15,7 @@ interface Props {
 const socialMediaList = [
   {
     key: "github",
-    url: "www.github.com/eduwr",
+    url: "https://www.github.com/eduwr",
     Icon: GithubIcon,
   },
   {
@@ -80,13 +80,13 @@ export const Footer = ({ addressLines, pages }: Props) => {
           ))}
         </div>
         {/* Social Media */}
-        <div className="flex absolute right-0 top-5 items-end justify-between ">
-          {socialMediaList.map(({ key, Icon }) => (
+        <div className="flex absolute right-0 top-5 items-end justify-between">
+          {socialMediaList.map(({ key, Icon, url }) => (
             <a
               key={key}
-              className="flex justify-center items-center w-12 h-12 ml-3 border-2 border-tertiary rounded-full overflow-hidden transition-all duration-300 hover:bg-primary"
+              className="flex justify-center items-center w-12 h-12 ml-3 border-2 border-tertiary rounded-full overflow-hidden transition-smooth hover:bg-primary opacity-70 hover:opacity-100"
               target="_blank"
-              href="https://www.instagram.com/eduwric"
+              href={url}
               rel="noreferrer"
             >
               <Icon />

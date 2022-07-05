@@ -1,6 +1,6 @@
 export const GithubIcon = () => (
   <svg
-    fill="#d9d9d9"
+    fill="#ffffff"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 50 50"
     width="24px"
