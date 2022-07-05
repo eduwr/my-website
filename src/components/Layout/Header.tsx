@@ -7,7 +7,7 @@ interface Props {
 
 export const Header = ({ pages }: Props) => {
   return (
-    <header className="h-56 bg-gradient-to-b from-tertiary-content">
+    <header className="h-32 md:h-56 bg-gradient-to-b from-tertiary-content">
       <Navbar pages={pages}/>
     </header>
   );
