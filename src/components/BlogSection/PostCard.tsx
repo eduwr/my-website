@@ -1,9 +1,9 @@
-import type { Post } from "../../pages";
 import Image from "next/image";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import dayjs from 'dayjs'
 import Link from "next/link";
 import { use3DTransform } from "../../hooks/use3DTransform";
+import { Post } from "../../graphql/types/Post";
 
 interface Props {
   post: Post;
@@ -19,7 +19,7 @@ export const PostCard = ({ post }: Props) => {
   const added = dayjs(post.dateAdded);
 
   return (
-    <Link passHref href={`https://eduardowronscki.hashnode.dev/${post.slug}`}>
+    <Link passHref href={`/${post.slug}`}>
       <a
         ref={ref}
         onMouseMove={handleMouseMove}
