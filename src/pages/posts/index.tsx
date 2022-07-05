@@ -1,9 +1,8 @@
-import type { GetServerSideProps, NextPage } from "next";
+import { BlogSection } from "../../components/BlogSection";
 import Head from "next/head";
-import { Presentation } from "../components/Presentation";
-import { BlogSection } from "../components/BlogSection";
-import { gql } from '@apollo/client';
-import { apolloClient } from "../lib/ApolloClient";
+import { GetServerSideProps, NextPage } from "next";
+import { apolloClient } from "../../lib/ApolloClient";
+import { gql } from "@apollo/client";
 
 export interface Post {
   _id: string;
@@ -32,33 +31,32 @@ const GET_POSTS_BY_USER = gql`
     user(username:$user) {
       publication {
         posts {
-          _id
-          title
-          coverImage
-          brief
-          dateAdded
-          slug
+            _id
+            title
+            coverImage
+            brief
+            dateAdded
+            slug
         }
       }
     }
   }
 `;
 
-const Home: NextPage<Props> = (props) => {
 
+const Posts: NextPage<Props>= (props) => {
   return (
     <div>
       <Head>
-        <title>Eduardo Wronscki | Home</title>
-        <meta name="description" content="Eduardo Wronscki - Full-Stack Developer"/>
+        <title>Eduardo Wronscki | Blog</title>
+        <meta name="description" content="Eduardo Wronscki - Blog"/>
         <link rel="icon" href="/favicon.ico"/>
       </Head>
-
-      <Presentation/>
       <BlogSection posts={props.posts}/>
     </div>
-  );
-};
+
+  )
+}
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const {data} = await apolloClient.query<GetPostsByUserResponse>({
@@ -79,4 +77,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
   }
 }
 
-export default Home;
+
+
+export default Posts;

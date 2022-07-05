@@ -36,7 +36,7 @@ export const PostCard = ({ post }: Props) => {
           <div
             className="absolute flex flex-col justify-end p-3 top-0 left-0 right-0 bottom-0 z-30 rounded-2xl"
             style={{
-              transform: `${rotationCoordinates.some(c => c) ? `perspective(900px) translateZ(80px) translateX(20px) translateY(-10px) rotateY(${-rotationCoordinates[0]}deg) rotateX(${rotationCoordinates[1]}deg)` : ''}`,
+              transform: `${rotationCoordinates.some(c => c) ? `perspective(900px) translateZ(80px) translateX(20px) translateY(-10px) rotateY(${-rotationCoordinates[0]}deg) rotateX(${rotationCoordinates[1]}deg` : ''}`,
 
             }}
           >

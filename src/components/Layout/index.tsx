@@ -14,7 +14,7 @@ export type NavigatePage = {
 };
 
 const pages: NavigatePage[] = [
-  { key: "home.nav.blog", to: "https://eduardowronscki.hashnode.dev", target: "_blank" },
+  { key: "home.nav.blog", to: "/posts" },
   { key: "home.nav.home", to: "/" },
 ];
 
