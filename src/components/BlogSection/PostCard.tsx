@@ -19,12 +19,11 @@ export const PostCard = ({ post }: Props) => {
   const added = dayjs(post.dateAdded);
 
   return (
-    <Link passHref href={`/${post.slug}`}>
+    <Link passHref href={`/posts/${post.slug}`}>
       <a
         ref={ref}
         onMouseMove={handleMouseMove}
         onMouseLeave={cleanup}
-        target="_blank"
         style={{
           transform: `perspective(900px) rotateY(${-rotationCoordinates[0]}deg) rotateX(${rotationCoordinates[1]}deg)`,
           filter: `drop-shadow(${rotationCoordinates[0]}px ${rotationCoordinates[1]}px 20px rgb(0 0 0 / 0.5))`,
@@ -37,7 +36,6 @@ export const PostCard = ({ post }: Props) => {
             className="absolute flex flex-col justify-end p-3 top-0 left-0 right-0 bottom-0 z-30 rounded-2xl"
             style={{
               transform: `${rotationCoordinates.some(c => c) ? `perspective(900px) translateZ(80px) translateX(20px) translateY(-10px) rotateY(${-rotationCoordinates[0]}deg) rotateX(${rotationCoordinates[1]}deg` : ''}`,
-
             }}
           >
             <span className="text-secondary font-thin text-sm">{added.format("Do MMMM YYYY")}</span>

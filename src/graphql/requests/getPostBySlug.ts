@@ -16,7 +16,7 @@ export const getPostBySlug = async ({ slug }: Props) => {
     query: GET_POST_BY_SLUG,
     variables: {
       host: process.env.NEXT_PUBLIC_HASHNODE_HOST,
-      slug: slug
+      slug
     }
   });
 
