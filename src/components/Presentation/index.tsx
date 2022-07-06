@@ -2,8 +2,14 @@
 import { Translated } from "../Translated";
 import { BaseButton } from "../BaseButton";
 import { ProfilePicture } from "./ProfilePicture";
+import { Variants, motion } from "framer-motion";
 
-
+const variants: Variants = {
+  hover: {
+    scale: 1.2,
+    originX: 0
+  }
+}
 
 export const Presentation = () => (
   <section
@@ -16,6 +22,10 @@ export const Presentation = () => (
       <p className="text-xl xl:text-2xl text-tertiary mt-3 mb-8">
         <Translated textKey="home.presentation.description" />
       </p>
+      <motion.div
+        variants={variants}
+        whileHover="hover"
+      >
       <BaseButton
         outline
         onClick={() => {
@@ -27,8 +37,10 @@ export const Presentation = () => (
           }
         }}
       >
+
         <Translated textKey={"home.presentation.button"} />
       </BaseButton>
+      </motion.div>
     </div>
     {/* Profile Image Container */}
     <div className="hidden relative md:flex items-center">

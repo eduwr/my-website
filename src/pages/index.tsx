@@ -24,9 +24,12 @@ const pageAnimation: Variants = {
       ease: "easeInOut"
     }
   },
-  out: {
+  exit: {
+    x: '-20vw',
     opacity: 0,
-    x: '-100vw'
+    transition: {
+      ease: 'easeInOut'
+    }
   },
 }
 
@@ -37,7 +40,7 @@ const Home: NextPage<Props> = (props) => {
       variants={pageAnimation}
       initial="hidden"
       animate="visible"
-      exit="out"
+      exit="exit"
     >
       <Head>
         <title>Eduardo Wronscki | Home</title>

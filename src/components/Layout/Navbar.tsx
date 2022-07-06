@@ -42,7 +42,7 @@ export const Navbar = ({ pages }: Props) => {
               initial="initial"
               animate={asPath === to ? "zoomIn": "zoomOut"}
             >
-              <Link href={to}>
+              <Link href={to} scroll={false}>
                 <a
                   className={"text-5xl md:text-6xl text-tertiary lowercase m-7 text-shadow transition-fast" + addStyle}
                   target={target}

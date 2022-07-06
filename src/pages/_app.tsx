@@ -6,17 +6,15 @@ import { TranslateProvider } from "../contexts/TranslateContext";
 import { AnimatePresence } from "framer-motion";
 
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
+
   return (
     <AnimatePresence
       exitBeforeEnter
-      initial={false}
     >
-      <TranslateProvider>
+      <TranslateProvider key={router.route}>
         <Layout>
-
-            <Component {...pageProps} />
-
+            <Component router={router} {...pageProps} />
         </Layout>
       </TranslateProvider>
     </AnimatePresence>

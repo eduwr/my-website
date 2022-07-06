@@ -22,9 +22,12 @@ const pageAnimation: Variants = {
       ease: "easeInOut"
     }
   },
-  out: {
+  exit: {
     opacity: 0,
-    x: '-100vw'
+    x: '-100vw',
+    transition: {
+      ease: 'easeInOut'
+    }
   },
 }
 
@@ -35,7 +38,7 @@ const Posts: NextPage<Props>= (props) => {
       variants={pageAnimation}
       initial="hidden"
       animate="visible"
-      exit="out"
+      exit="exit"
     >
 
       <Head>
