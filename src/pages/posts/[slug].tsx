@@ -15,29 +15,31 @@ dayjs.extend(advancedFormat);
 
 const PostPage = ({ post }: Props) => {
   const dateAdded = dayjs(post.dateAdded);
-  console.log({p: post.content})
   return (
-    <div>
+    <div className="flex flex-col">
       <Head>
         <title>Eduardo Wronscki | {post.title}</title>
         <meta name="description" content="Eduardo Wronscki - Blog"/>
         <link rel="icon" href="/favicon.ico"/>
       </Head>
       {/* Feature Image */}
-      <div className="relative w-full h-64">
+      <div className="self-center relative w-full h-64 md:h-1/2-screen lg:max-w-1/2">
         <div
-          className="absolute flex flex-col-reverse z-30 left-0 right-0 bottom-[-5px] bg-gradient-to-t from-primary-content via-primary-content px-5 py-3"
+          className={`
+          absolute flex flex-col-reverse left-0 right-0 z-30 bottom-[-5px] px-5 py-3
+          bg-gradient-to-t from-primary-content via-primary-content
+          `}
         >
-          <h3 className="text-tertiary text-xl font-bold">{post.title}</h3>
+          <h3 className="text-tertiary text-xl font-bold lg:text-3xl">{post.title}</h3>
         </div>
         <StyledImage src={post.coverImage} alt={post.title} />
       </div>
       {/* Description */}
-      <div className="px-5">
-        <span className="text-secondary-content">{dateAdded.format(DateFormats.DEFAULT)}</span>
+      <div className="px-5 lg:self-center lg:flex lg:flex-col lg:items-center">
+        <span className="text-secondary-content lg:text-xl">{dateAdded.format(DateFormats.DEFAULT)}</span>
         <div className="flex flex-wrap">
           {post.tags.map(tag => (
-            <span className="text-secondary mr-2" key={tag._id}>#{tag.name}</span>
+            <span className="text-secondary mr-2 lg:text-lg" key={tag._id}>#{tag.name}</span>
           ))}
         </div>
       </div>
