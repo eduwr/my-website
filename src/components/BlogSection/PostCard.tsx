@@ -1,9 +1,9 @@
-import Image from "next/image";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import dayjs from 'dayjs'
 import Link from "next/link";
 import { use3DTransform } from "../../hooks/use3DTransform";
 import { Post } from "../../graphql/types/Post";
+import { StyledImage } from "../StyledImage";
 
 interface Props {
   post: Post;
@@ -44,20 +44,8 @@ export const PostCard = ({ post }: Props) => {
             <p className="text-xs text-tertiary mt-3">{post.brief.split(".")[0]}.</p>
           </div>
 
-          <div
-            style={{
-              background: "radial-gradient(#2b2b2b22, #2b2b2b)"
-            }}
-            className="absolute top-0 bottom-0 left-0 right-0 z-20 rounded-2xl overflow-hidden"
-          />
-          <div className="absolute top-0 bottom-0 left-0 right-0 rounded-2xl overflow-hidden">
-            <Image
-              src={post.coverImage}
-              layout="fill"
-              objectFit="cover"
-              alt={post.title}
-            />
-          </div>
+          <StyledImage src={post.coverImage} alt={post.title} rounded/>
+
         </li>
       </a>
     </Link>
