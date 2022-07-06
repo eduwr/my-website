@@ -9,7 +9,7 @@ interface Props {
 }
 
 const navClass = "h-full flex items-center justify-center md:block md:pt-20 md:pr-16"
-const listClass = "flex flex-row justify-center md:justify-end divide-x-4 divide-tertiary"
+const listClass = "flex flex-row justify-center md:justify-end"
 
 const variants: Variants = {
   initial: {
@@ -27,7 +27,7 @@ const variants: Variants = {
 }
 
 export const Navbar = ({ pages }: Props) => {
-  const {asPath} = useRouter()
+  const { asPath } = useRouter()
 
   return (
     <nav className={navClass}>
@@ -40,7 +40,7 @@ export const Navbar = ({ pages }: Props) => {
               key={key}
               variants={variants}
               initial="initial"
-              animate={asPath === to ? "zoomIn": "zoomOut"}
+              animate={asPath === to ? "zoomIn" : "zoomOut"}
             >
               <Link href={to} scroll={false}>
                 <a
