@@ -6,6 +6,10 @@ import { StyledImage } from "../../components/StyledImage";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import dayjs from 'dayjs'
 import { DateFormats } from "../../utils/dateFormats";
+import { ArrowBackIcon } from "../../components/Icons/ArrowBackIcon";
+import { VisuallyHidden } from "../../components/VisuallyHidden/VisuallyHidden";
+import { useRouter } from "next/router";
+import { MouseEventHandler } from "react";
 
 
 interface Props {
@@ -15,6 +19,12 @@ dayjs.extend(advancedFormat);
 
 const PostPage = ({ post }: Props) => {
   const dateAdded = dayjs(post.dateAdded);
+  const { back } = useRouter()
+  const handleBackButton: MouseEventHandler<HTMLButtonElement> = (e) => {
+    e.preventDefault()
+    back();
+  }
+
   return (
     <div className="flex flex-col">
       <Head>
@@ -24,6 +34,14 @@ const PostPage = ({ post }: Props) => {
       </Head>
       {/* Feature Image */}
       <div className="self-center relative w-full h-64 md:h-1/2-screen lg:max-w-1/2">
+        <button
+          type="submit"
+          className="absolute top-3 left-3 z-50"
+          onClick={handleBackButton}
+        >
+          <VisuallyHidden>Go back</VisuallyHidden>
+          <ArrowBackIcon />
+        </button>
         <div
           className={`
           absolute flex flex-col-reverse left-0 right-0 z-30 bottom-[-5px] px-5 py-3
