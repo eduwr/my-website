@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useEffect, useState } from "react"
+import { createContext, ReactNode, useCallback, useMemo } from "react"
 import ptBR from '../lang/pt-BR.json';
 import enUS from '../lang/en-US.json';
 import { useRouter } from "next/router";
@@ -29,15 +29,13 @@ const langMapping: Record<LANGUAGES, Dictionary> = {
 export const TranslateProvider = ({ children }: Props) => {
   const { locale } = useRouter()
 
-  const [ dictionary, setDictionary ] = useState<Dictionary>(langMapping[LANGUAGES.EN_US])
+  const dictionary = useMemo(() => {
+    return langMapping[locale as LANGUAGES] || langMapping[LANGUAGES.EN_US]
+  }, [locale])
 
-  useEffect(() => {
-    setDictionary(langMapping[locale as LANGUAGES] || langMapping[LANGUAGES.EN_US])
-  }, [ locale ])
-
-  const translate = (key: keyof Dictionary, def?: string) => {
+  const translate = useCallback((key: keyof Dictionary, def?: string) => {
     return dictionary[key] || def || null
-  }
+  }, [dictionary])
 
   return (
     <TranslateContext.Provider

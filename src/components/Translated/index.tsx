@@ -8,5 +8,6 @@ interface Props {
 
 export const Translated = ({ textKey, defaultText }: Props): JSX.Element => {
   const { translate } = useTranslate()
+
   return <>{translate(textKey, defaultText)}</>
 }
