@@ -9,7 +9,7 @@ interface Props {
 }
 
 const variants: Variants = {
-  "hidden": {
+  hidden: {
     opacity: 0,
     x: "-50px",
     y: "-25px"
@@ -38,7 +38,8 @@ export const BlogSection = ({posts}: Props) => {
         className="flex flex-wrap justify-center gap-5"
         variants={variants}
         initial="hidden"
-        animate="visible"
+        // animate="visible"
+        whileInView="visible"
       >
         {posts.map((post) =>
           <PostCard key={post._id} post={post}/>)}

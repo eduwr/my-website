@@ -19,6 +19,7 @@ const pageAnimation: Variants = {
     transition: {
       duration: 0.5,
       when: "beforeChildren",
+      staggerChildren: 2,
       ease: "easeInOut"
     }
   },
