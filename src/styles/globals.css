@@ -131,10 +131,10 @@
   .post-content {
     /* Font */
     font: 15px Helvetica, arial, freesans, clean, sans-serif;
-    @apply text-tertiary leading-relaxed break-words antialiased;
+    @apply text-tertiary leading-relaxed break-words antialiased lg:text-lg;
 
     /* Layout */
-    @apply w-full bg-tertiary-content mt-8 p-5 rounded-3xl;
+    @apply w-full bg-tertiary-content mt-8 p-5 lg:p-16 rounded-3xl;
   }
 
   .post-content a {
@@ -154,31 +154,31 @@
   }
 
   .post-content h1 {
-    @apply text-primary-focus text-3xl pb-5 border-b-2 border-tertiary ;
+    @apply text-primary-focus text-3xl lg:text-4xl pb-5 lg:pb-8 border-b-2 border-tertiary ;
   }
 
   .post-content h2 {
-    @apply text-primary-focus text-3xl pb-5 border-b-2 border-tertiary ;
+    @apply text-primary-focus text-3xl lg:text-4xl pb-5 lg:pb-8 border-b-2 border-tertiary ;
   }
 
   .post-content h3 {
-    @apply text-2xl;
+    @apply text-2xl lg:text-3xl;
   }
 
   .post-content h4 {
-    @apply text-xl;
+    @apply text-xl lg:text-2xl;
   }
 
   .post-content h5 {
-    @apply text-lg;
+    @apply text-lg lg:text-xl;
   }
 
   .post-content h6 {
-    @apply text-lg text-tertiary;
+    @apply text-lg text-tertiary lg:text-xl;
   }
 
   .post-content h1, h2, h3, h4, h5, h6 {
-    @apply font-bold leading-relaxed my-4 ;
+    @apply font-bold leading-relaxed my-4 lg:my-8 ;
   }
 
   .post-content h1 + p, h2 + p, h3 + p {
