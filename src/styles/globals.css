@@ -127,3 +127,79 @@
   }
 }
 
+@layer components {
+  .post-content {
+    /* Font */
+    font: 15px Helvetica, arial, freesans, clean, sans-serif;
+    @apply text-tertiary leading-relaxed break-words antialiased;
+
+    /* Layout */
+    @apply w-full bg-tertiary-content mt-8 p-5 rounded-3xl;
+  }
+
+  .post-content a {
+    @apply text-info decoration-0;
+  }
+
+  .post-content a:hover {
+    @apply underline;
+  }
+
+  .post-content p, blockquote, ul, ol, dl, table, pre {
+    @apply my-4 mx-0;
+  }
+
+  .post-content ul, ol {
+    @apply pl-7;
+  }
+
+  .post-content h1 {
+    @apply text-primary-focus text-3xl pb-5 border-b-2 border-tertiary ;
+  }
+
+  .post-content h2 {
+    @apply text-primary-focus text-3xl pb-5 border-b-2 border-tertiary ;
+  }
+
+  .post-content h3 {
+    @apply text-2xl;
+  }
+
+  .post-content h4 {
+    @apply text-xl;
+  }
+
+  .post-content h5 {
+    @apply text-lg;
+  }
+
+  .post-content h6 {
+    @apply text-lg text-tertiary;
+  }
+
+  .post-content h1, h2, h3, h4, h5, h6 {
+    @apply font-bold leading-relaxed my-4 ;
+  }
+
+  .post-content h1 + p, h2 + p, h3 + p {
+    @apply mt-3;
+  }
+
+  .post-content img {
+    @apply max-w-full;
+  }
+
+  .post-content code,
+  pre {
+    /* Layout */
+    @apply bg-secondary-content rounded-md border-2 border-tertiary overflow-auto;
+
+    /* Text */
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    @apply text-xs text-white py-0.5 mx-1 px-2 whitespace-pre;
+  }
+
+  .post-content pre code {
+    @apply border-0 m-0 p-0 whitespace-pre;
+  }
+}

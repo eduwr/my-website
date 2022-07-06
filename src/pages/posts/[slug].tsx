@@ -42,7 +42,7 @@ const PostPage = ({ post }: Props) => {
         </div>
       </div>
       <div
-        className="px-5 post-content"
+        className="post-content"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
     </div>

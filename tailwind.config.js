@@ -8,7 +8,7 @@ module.exports = {
             black: "#000000",
             white: "#ffffff",
             primary: "#5D5FEF",
-            "primary-focus": "#5D5FEF",
+            "primary-focus": "#C8C9FF",
             "primary-content": "#2B2B2B",
             secondary: "#F8F9FA",
             "secondary-focus": "#F8F9FA",
@@ -18,6 +18,7 @@ module.exports = {
             "tertiary-content": "#4F4F4F",
             "success": "#5AD78C",
             "error": "#C75151",
+            "info": "#58a6ff",
             "inherit": "inherit"
         },
         fontFamily: {
