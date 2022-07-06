@@ -1,7 +1,6 @@
 import { Translated } from "../Translated";
 import {PostCard} from "./PostCard";
-
-import type { Post } from "../../pages";
+import type { Post } from "../../graphql/types/Post";
 
 
 interface Props {
