@@ -7,6 +7,7 @@ export const GET_POST_BY_SLUG = gql`
       title
       totalReactions
       coverImage
+      dateAdded
       tags{
         _id
         name

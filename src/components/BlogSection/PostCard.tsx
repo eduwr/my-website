@@ -4,6 +4,7 @@ import Link from "next/link";
 import { use3DTransform } from "../../hooks/use3DTransform";
 import { Post } from "../../graphql/types/Post";
 import { StyledImage } from "../StyledImage";
+import { DateFormats } from "../../utils/dateFormats";
 
 interface Props {
   post: Post;
@@ -38,7 +39,7 @@ export const PostCard = ({ post }: Props) => {
               transform: `${rotationCoordinates.some(c => c) ? `perspective(900px) translateZ(80px) translateX(20px) translateY(-10px) rotateY(${-rotationCoordinates[0]}deg) rotateX(${rotationCoordinates[1]}deg` : ''}`,
             }}
           >
-            <span className="text-secondary font-thin text-sm">{added.format("Do MMMM YYYY")}</span>
+            <span className="text-secondary font-thin text-sm">{added.format(DateFormats.DEFAULT)}</span>
 
             <h1 className="z-50 text-secondary font-bold text-xl">{post.title}</h1>
             <p className="text-xs text-tertiary mt-3">{post.brief.split(".")[0]}.</p>
