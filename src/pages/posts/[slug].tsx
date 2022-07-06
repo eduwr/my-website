@@ -10,7 +10,44 @@ import { ArrowBackIcon } from "../../components/Icons/ArrowBackIcon";
 import { VisuallyHidden } from "../../components/VisuallyHidden/VisuallyHidden";
 import { useRouter } from "next/router";
 import { MouseEventHandler } from "react";
+import { Variants, motion } from "framer-motion";
 
+const pageAnimation: Variants = {
+  hidden: {
+    opacity: 0,
+    x: "-20vw",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+      when: "beforeChildren",
+      ease: "easeInOut"
+    }
+  },
+  exit: {
+    opacity: 0,
+    x: '-100vw',
+    transition: {
+      ease: 'easeInOut'
+    }
+  },
+}
+
+const postAnimation: Variants = {
+  hidden: {
+    y: "100vh",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      type: "spring",
+    }
+  },
+}
 
 interface Props {
   post: Post
@@ -26,7 +63,11 @@ const PostPage = ({ post }: Props) => {
   }
 
   return (
-    <div className="flex flex-col">
+    <motion.div
+      variants={pageAnimation}
+      initial="hidden"
+      animate="visible"
+      className="flex flex-col">
       <Head>
         <title>Eduardo Wronscki | {post.title}</title>
         <meta name="description" content="Eduardo Wronscki - Blog"/>
@@ -53,7 +94,8 @@ const PostPage = ({ post }: Props) => {
         <StyledImage src={post.coverImage} alt={post.title} />
       </div>
       {/* Description */}
-      <div className="px-5 lg:self-center lg:flex lg:flex-col lg:items-center">
+      <div
+        className="px-5 lg:self-center lg:flex lg:flex-col lg:items-center">
         <span className="text-secondary-content lg:text-xl">{dateAdded.format(DateFormats.DEFAULT)}</span>
         <div className="flex flex-wrap">
           {post.tags.map(tag => (
@@ -61,11 +103,12 @@ const PostPage = ({ post }: Props) => {
           ))}
         </div>
       </div>
-      <div
+      <motion.div
+        variants={postAnimation}
         className="post-content"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
-    </div>
+    </motion.div>
   )
 }
 
