@@ -16,7 +16,6 @@ export const Presentation = () => (
         outline
         onClick={() => {
           if( window ) {
-            console.log(window.screenY)
             window.scrollTo({
               behavior: "smooth",
               top: 5000

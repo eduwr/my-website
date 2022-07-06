@@ -79,7 +79,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   const post = await getPostBySlug({ slug })
-  console.log({ post })
 
   return {
     props: {
