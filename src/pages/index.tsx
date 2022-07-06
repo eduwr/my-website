@@ -4,24 +4,49 @@ import { Presentation } from "../components/Presentation";
 import { BlogSection } from "../components/BlogSection";
 import { Post } from "../graphql/types/Post";
 import { getPosts } from "../graphql/requests/getPosts";
+import { motion, Variants } from 'framer-motion';
 
 interface Props {
   posts: Post[]
 }
 
+const pageAnimation: Variants = {
+  hidden: {
+    opacity: 0,
+    x: "-20vw",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+      // type: "spring",
+      ease: "easeInOut"
+    }
+  },
+  out: {
+    opacity: 0,
+    x: '-100vw'
+  },
+}
+
 const Home: NextPage<Props> = (props) => {
 
   return (
-    <div>
+    <motion.div
+      variants={pageAnimation}
+      initial="hidden"
+      animate="visible"
+      exit="out"
+    >
       <Head>
         <title>Eduardo Wronscki | Home</title>
         <meta name="description" content="Eduardo Wronscki - Full-Stack Developer"/>
         <link rel="icon" href="/favicon.ico"/>
       </Head>
-
-      <Presentation/>
+        <Presentation/>
       <BlogSection posts={props.posts}/>
-    </div>
+    </motion.div>
   );
 };
 
