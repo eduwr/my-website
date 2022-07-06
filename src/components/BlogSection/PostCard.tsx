@@ -20,7 +20,7 @@ export const PostCard = ({ post }: Props) => {
   const added = dayjs(post.dateAdded);
 
   return (
-    <Link passHref href={`/posts/${post.slug}`}>
+    <Link passHref href={`/posts/${post.slug}`} scroll={false}>
       <a
         ref={ref}
         onMouseMove={handleMouseMove}

@@ -11,6 +11,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <AnimatePresence
       exitBeforeEnter
+      onExitComplete={() => window.scrollTo(0, 0)}
     >
       <TranslateProvider key={router.route}>
         <Layout>
