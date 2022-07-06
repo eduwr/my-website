@@ -36,7 +36,7 @@ const PostPage = ({ post }: Props) => {
       <div className="self-center relative w-full h-64 md:h-1/2-screen lg:max-w-1/2">
         <button
           type="submit"
-          className="absolute top-3 left-3 z-50"
+          className="absolute top-3 left-3 z-50 block lg:hidden"
           onClick={handleBackButton}
         >
           <VisuallyHidden>Go back</VisuallyHidden>

@@ -11,12 +11,9 @@ export const Header = ({ pages }: Props) => {
   const routeParams = asPath.split("/").filter(Boolean);
 
   const isHidden = routeParams.length >= 2;
-  if(isHidden) {
-    return <></>
-  }
 
   return (
-    <header className='h-32 md:h-56 bg-gradient-to-b from-tertiary-content'>
+    <header className={`h-32 md:h-56 bg-gradient-to-b from-tertiary-content ${isHidden && 'hidden lg:block'}`}>
       <Navbar pages={pages}/>
     </header>
   );
