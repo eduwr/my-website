@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       exitBeforeEnter
       onExitComplete={() => window.scrollTo(0, 0)}
     >
-      <TranslateProvider key={router.route}>
+      <TranslateProvider>
         <Layout>
             <Component router={router} {...pageProps} />
         </Layout>
