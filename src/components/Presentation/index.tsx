@@ -25,6 +25,7 @@ export const Presentation = () => (
       <motion.div
         variants={variants}
         whileHover="hover"
+        className="w-fit"
       >
       <BaseButton
         outline

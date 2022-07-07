@@ -16,7 +16,9 @@ const buttonStyle = "flex whitespace-nowrap py-4 px-8 text-lg md:text-xl text-wh
 
 export const BaseButton = ({ children, outline, style, onClick, to }: ButtonProps) => {
   return (
-    <div style={style}>
+    <div style={style}
+      className="w-fit"
+    >
       {to ? (
         <Link href={to}>
           <a className={outline ? outlineStyle : buttonStyle}>{children}</a>
