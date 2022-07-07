@@ -9,16 +9,16 @@ import { AnimatePresence } from "framer-motion";
 function MyApp({ Component, pageProps, router }: AppProps) {
 
   return (
-    <AnimatePresence
-      exitBeforeEnter
-      onExitComplete={() => window.scrollTo(0, 0)}
-    >
-      <TranslateProvider>
-        <Layout>
-            <Component router={router} {...pageProps} />
+    <TranslateProvider>
+      <AnimatePresence
+        exitBeforeEnter
+        onExitComplete={() => window.scrollTo(0, 0)}
+      >
+        <Layout key={router.route}>
+          <Component router={router} {...pageProps} />
         </Layout>
-      </TranslateProvider>
-    </AnimatePresence>
+      </AnimatePresence>
+    </TranslateProvider>
   );
 }
 

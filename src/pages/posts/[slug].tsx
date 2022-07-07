@@ -47,6 +47,13 @@ const postAnimation: Variants = {
       type: "spring",
     }
   },
+  exit: {
+    x: '-20vw',
+    opacity: 0,
+    transition: {
+      ease: 'easeInOut'
+    }
+  },
 }
 
 interface Props {
@@ -67,7 +74,9 @@ const PostPage = ({ post }: Props) => {
       variants={pageAnimation}
       initial="hidden"
       animate="visible"
-      className="flex flex-col">
+      exit="exit"
+      className="flex flex-col"
+    >
       <Head>
         <title>Eduardo Wronscki | {post.title}</title>
         <meta name="description" content="Eduardo Wronscki - Blog"/>
