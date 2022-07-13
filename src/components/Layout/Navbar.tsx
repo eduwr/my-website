@@ -28,7 +28,6 @@ const variants: Variants = {
 
 export const Navbar = ({ pages }: Props) => {
   const { asPath } = useRouter()
-
   return (
     <nav className={navClass}>
       <ul className={listClass}>

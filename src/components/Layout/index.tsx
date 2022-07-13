@@ -26,8 +26,7 @@ export const Layout = ({ children }: Props) =>
       <main>{children}</main>
       <Footer
         addressLines={[
-          "Rua Marechal Floriano Peixoto, 196 Curitiba - PR",
-          "CEP 88140-000",
+          "Santo Amaro da Imperatriz, SC", "Brazil"
         ]}
         pages={pages}
       />
