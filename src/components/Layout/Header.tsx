@@ -16,7 +16,7 @@ export const Header = ({ pages }: Props) => {
   return (
     <header
       className={`flex w-full pt-5 items-top justify-center sm:justify-between h-32 md:h-40 bg-gradient-to-b from-tertiary-content ${
-        isHidden && "hidden lg:block"
+        isHidden && "hidden lg:flex"
       }`}
     >
       <div className="ml-8 hidden sm:inline">
