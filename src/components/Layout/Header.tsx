@@ -2,10 +2,19 @@ import { Navbar } from "./Navbar";
 import { NavigatePage } from ".";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { Variants, motion } from "framer-motion";
+import Link from "next/link";
 
 interface Props {
   pages: NavigatePage[];
 }
+
+const variants: Variants = {
+  hover: {
+    scale: 1.2,
+    originX: 0,
+  },
+};
 
 export const Header = ({ pages }: Props) => {
   const { asPath } = useRouter();
@@ -19,15 +28,22 @@ export const Header = ({ pages }: Props) => {
         isHidden && "hidden lg:flex"
       }`}
     >
-      <div className="ml-8 hidden sm:inline">
-        <Image
-          src="/assets/logo/logo-large.png"
-          objectFit="contain"
-          width={250}
-          height={100}
-          alt="Wilk Technology Logo"
-        />
-      </div>
+      <Link href={"/"} passHref>
+        <motion.a
+          variants={variants}
+          whileHover="hover"
+          className="ml-8 hidden sm:inline mb-10"
+        >
+          <Image
+            src="/assets/logo/logo-large.png"
+            objectFit="contain"
+            width={250}
+            height={100}
+            alt="Wilk Technology Logo"
+          />
+        </motion.a>
+      </Link>
+
       <Navbar pages={pages} />
     </header>
   );

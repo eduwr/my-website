@@ -1,11 +1,11 @@
 {
   "home.nav.home": "Home",
   "home.nav.blog": "Blog",
-  "home.presentation.title": "Let's build something great",
-  "home.presentation.description": "Hi. My name is Eduardo. I'm a Full-Stack Developer passionate for creating beautiful and meaningful systems with cool techs like Node.js, React and React Native.",
+  "home.presentation.title": "Hi! I'm a Full-Stack Developer",
+  "home.presentation.description": "Hi. My name is Eduardo. I'm passionate for creating beautiful and meaningful systems with cool techs like Node.js, React and React Native.",
   "home.presentation.button": "Get in touch",
   "home.footer.email": "eduwric@gmail.com",
-  "home.footer.featuredPhrase": "Here your dreams become reality",
+  "home.footer.featuredPhrase": "“Those who can imagine anything, can create the impossible.”",
   "home.footer.address.title": "Office",
   "home.footer.links.title": "Links"
 }
