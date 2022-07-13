@@ -55,10 +55,6 @@
     @apply duration-300;
   }
 
-  .nav-decoration-x {
-    @apply relative;
-  }
-
   .nav-decoration-y {
     @apply relative;
   }
@@ -82,27 +78,8 @@
     width: var(--line-width);
     height: 150vh;
   }
-
-  .nav-decoration-x::after {
-    @apply absolute;
-    @apply content-[""];
-    @apply bg-tertiary;
-    width: 75vw;
-    height: var(--line-width);
-    bottom: 0.75rem;
-    right: 2.5rem;
-  }
   
-  @media screen and (max-width: 1536px) {
-    .nav-decoration-x::after {
-      width: 60vw;
-    }
-  }
-
   @media screen and (max-width: 1024px) {
-    .nav-decoration-x::after {
-      width: 45vw;
-    }
 
     .nav-decoration-y::before {
       height: 190vh;

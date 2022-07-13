@@ -33,9 +33,7 @@ export const Navbar = ({ pages }: Props) => {
     <nav className={navClass}>
       <ul className={listClass}>
         {pages.map(({ key, to, target }, idx) => {
-          const addStyle =
-            (!idx && " nav-decoration-x") ||
-            (idx === pages.length - 1 && " nav-decoration-y");
+          const addStyle = idx === pages.length - 1 && " nav-decoration-y";
 
           return (
             <motion.li
