@@ -1,4 +1,3 @@
-
 import { Translated } from "../Translated";
 import { BaseButton } from "../BaseButton";
 import { ProfilePicture } from "./ProfilePicture";
@@ -7,14 +6,12 @@ import { Variants, motion } from "framer-motion";
 const variants: Variants = {
   hover: {
     scale: 1.2,
-    originX: 0
-  }
-}
+    originX: 0,
+  },
+};
 
 export const Presentation = () => (
-  <section
-    className="flex justify-evenly h-[calc(100vh-8rem)] md:h-[calc(100vh-14rem)] px-8 md:px-24 pb-8"
-  >
+  <section className="overflow-hidden relative flex justify-evenly h-[calc(100vh-8rem)] md:h-[calc(100vh-10rem)] px-8 md:px-24 pb-8">
     <div className="flex flex-col justify-center md:max-w-1/2">
       <h1 className="text-primary text-4xl xl:text-5xl leading-relaxed uppercase font-bold">
         <Translated textKey="home.presentation.title" />
@@ -22,25 +19,20 @@ export const Presentation = () => (
       <p className="text-xl xl:text-2xl text-tertiary mt-3 mb-8">
         <Translated textKey="home.presentation.description" />
       </p>
-      <motion.div
-        variants={variants}
-        whileHover="hover"
-        className="w-fit"
-      >
-      <BaseButton
-        outline
-        onClick={() => {
-          if( window ) {
-            window.scrollTo({
-              behavior: "smooth",
-              top: 5000
-            })
-          }
-        }}
-      >
-
-        <Translated textKey={"home.presentation.button"} />
-      </BaseButton>
+      <motion.div variants={variants} whileHover="hover" className="w-fit">
+        <BaseButton
+          outline
+          onClick={() => {
+            if (window) {
+              window.scrollTo({
+                behavior: "smooth",
+                top: 5000,
+              });
+            }
+          }}
+        >
+          <Translated textKey={"home.presentation.button"} />
+        </BaseButton>
       </motion.div>
     </div>
     {/* Profile Image Container */}
