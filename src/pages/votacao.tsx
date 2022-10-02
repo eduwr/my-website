@@ -13,20 +13,23 @@ const Votacao: NextPage = (props) => {
         const fetchData = async () => {
             const response = await fetch('https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/br/br-c0001-e000544-r.json');
             const parsedResponse = await response.json();
-
-            console.log(parsedResponse)
-
+            
             setHour(parsedResponse.ht);
             setCandidates(parsedResponse.cand);
             setLoaded(true)
         }
 
         fetchData()
-    }, [])
+    }, [loaded])
 
     useEffect(() => {
         console.log({ candidates })
-    }, [candidates])
+        let timer = setInterval(() => {
+            setLoaded(false);
+        }, 1000 * 60)
+
+        return () => clearInterval(timer);
+    }, [])
 
     const thClass = `
         w-1/6
