@@ -44,7 +44,7 @@ export const Footer = ({ addressLines, pages }: Props) => {
         <h3 className="text-2xl sm:text-4xl text-primary font-secondary text-center md:text-left mb-4 md:mb-0">
           <Translated
             textKey="home.footer.email"
-            defaultText="vitoria@vitoriacavassin.com"
+            defaultText=""
           />
         </h3>
         <p className="text-base sm:text-xl text-secondary-content text-center md:text-left">
