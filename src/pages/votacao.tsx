@@ -80,12 +80,13 @@ const Votacao: NextPage = (props) => {
 
             <div>
                 <div className="flex flex-col">
-
                     <span className="text-secondary">Ultima atualização: {hour}</span>
                     <span className="text-secondary">Apuração: {psi} %</span>
                 </div>
 
-                <table className="table-fixed text-primary w-full">
+                <div className="md:m-20">
+
+                <table className="rounded-lg overflow-hidden table-fixed text-primary w-full">
                     <thead>
                         <tr className="bg-primary text-center">
                             <th className={thClass}>#</th>
@@ -107,6 +108,8 @@ const Votacao: NextPage = (props) => {
                         })}
                     </tbody>
                 </table>
+                                    
+                </div>
             </div>
         </div>
     );
