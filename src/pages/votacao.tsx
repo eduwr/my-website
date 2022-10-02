@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 
 const Votacao: NextPage = (props) => {
-
+    const [psi, setPsi] = useState('')
     const [hour, setHour] = useState('')
     const [candidates, setCandidates] = useState<any[]>([])
     const [loaded, setLoaded] = useState(false)
@@ -13,9 +13,10 @@ const Votacao: NextPage = (props) => {
         const fetchData = async () => {
             const response = await fetch('https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/br/br-c0001-e000544-r.json');
             const parsedResponse = await response.json();
-            
+
             setHour(parsedResponse.ht);
             setCandidates(parsedResponse.cand);
+            setPsi(parsedResponse.psi);
             setLoaded(true)
         }
 
@@ -23,7 +24,6 @@ const Votacao: NextPage = (props) => {
     }, [loaded])
 
     useEffect(() => {
-        console.log({ candidates })
         let timer = setInterval(() => {
             setLoaded(false);
         }, 1000 * 60)
@@ -63,8 +63,12 @@ const Votacao: NextPage = (props) => {
             </Head>
 
             <div>
+                <div className="flex flex-col">
 
-                <span className="text-secondary">Ultima atualização: {hour}</span>
+                    <span className="text-secondary">Ultima atualização: {hour}</span>
+                    <span className="text-secondary">Apuração: {psi} %</span>
+                </div>
+
                 <table className="table-fixed text-primary w-full">
                     <thead>
                         <tr className="bg-primary text-center">
