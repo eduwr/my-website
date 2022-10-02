@@ -3,16 +3,30 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 
 
+type Candidate = {
+    nm: string,
+    pvap: string,
+    vap: string,
+    seq: string
+}
+
+
+type ElectionResults = {
+    cand: Candidate[],
+    ht: string,
+    psi: string
+}
+
 const Votacao: NextPage = (props) => {
     const [psi, setPsi] = useState('')
     const [hour, setHour] = useState('')
-    const [candidates, setCandidates] = useState<any[]>([])
+    const [candidates, setCandidates] = useState<Candidate[]>([])
     const [loaded, setLoaded] = useState(false)
     useEffect(() => {
         if (loaded) return;
         const fetchData = async () => {
             const response = await fetch('https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/br/br-c0001-e000544-r.json');
-            const parsedResponse = await response.json();
+            const parsedResponse = await response.json() as ElectionResults;
 
             setHour(parsedResponse.ht);
             setCandidates(parsedResponse.cand);
@@ -42,6 +56,7 @@ const Votacao: NextPage = (props) => {
         px-3
         lg:px-4
         border-l border-transparent
+        bg-tertiary-primary
     `
 
     const tdClass = `
@@ -50,7 +65,8 @@ const Votacao: NextPage = (props) => {
         text-base
         py-5
         px-2
-        bg-[#F3F6FF]
+        bg-tertiary-content
+        text-white
         border-b border-l border-[#E8E8E8]
     `
 
